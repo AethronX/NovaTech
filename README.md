@@ -6,6 +6,27 @@ The entire application (markup, styles, scripts, fonts and images) is bundled in
 [`index.html`](./index.html) file with no external network requests, so it can be hosted on any
 static host.
 
+## Deploy on Vercel
+
+This repo is ready to deploy on **Vercel** as a static site — no build step required.
+
+1. In the Vercel dashboard, go to **Add New… → Project** and import this repository.
+2. Project settings:
+   - **Framework preset:** `Other`
+   - **Build command:** *(leave empty)*
+   - **Output directory:** *(leave empty — repository root is served)*
+3. Deploy. Vercel serves `index.html` at the site root.
+
+The included [`vercel.json`](./vercel.json) enables clean URLs and rewrites all
+paths to `index.html`, so the single-page app resolves on any route. Any push to
+the connected branch triggers an automatic redeploy.
+
+### Deploy with the Vercel CLI (optional)
+
+```bash
+npx vercel deploy --prod
+```
+
 ## Deploy on Cloudflare Pages
 
 This repo is ready to deploy on **Cloudflare Pages** as a static site — no build step required.
